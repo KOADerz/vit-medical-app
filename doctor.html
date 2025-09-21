@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/doctor.css">
+  <link rel="icon" type="image/x-icon" href="logo.jpeg">
+  <title>Doctor's Portal - VIT Medical</title>
+</head>
+<body>
+  <header class="header">
+    <div class="left-header">
+      <h1 class="h1">VIT Medical Services</h1>
+      <p class="slogan">Doctor's Dashboard</p>
+    </div>
+    <div class="right-header">
+      <a href="index.html" class="student">Student Portal</a>
+      <a href="doctor.html" class="doctor">Doctor Portal</a>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    
+    <div class="dashboard-column left-column">
+      <h2 class="column-header">
+        <span class="icon">⏰</span>
+        <span>Pending Issues (<span id="pending-count">0</span>)</span>
+      </h2>
+      <div class="card-list" id="requests-list">
+        <div class="empty-state">
+          <span class="icon">⏰</span>
+          <p>No pending issues</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-column middle-column">
+      <div id="response-form-container">
+        
+        <div class="empty-state-large" id="select-issue-placeholder">
+          <span class="icon">🩺</span>
+          <p>Select a pending issue to respond</p>
+        </div>
+
+        <form id="response-form" style="display: none;">
+          <h2 class="form-header">Respond to Consultation</h2>
+          <div id="modal-student-info"></div>
+          <input type="hidden" id="consultation-id-input">
+          
+          <label for="diagnosis-input">Diagnosis</label>
+          <textarea id="diagnosis-input" rows="4" placeholder="Provide your medical assessment and recommendations..." required></textarea>
+          
+          <label for="medicine-input">Prescribed Medicine</label>
+          <textarea id="medicine-input" rows="3" placeholder="e.g., Paracetamol 500mg (1 tablet twice daily for 3 days)" required></textarea>
+
+          <label for="price-input">Consultation Fee (₹)</label>
+          <input type="number" id="price-input" placeholder="Enter total price" required>
+          
+          <div class="modal-buttons">
+            <button type="submit" class="submit-btn">Submit Response</button>
+            <button type="button" class="cancel-btn" id="cancel-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="dashboard-column right-column">
+      <h2 class="column-header">
+        <span class="icon">💊</span>
+        <span>Recent Responses (<span id="response-count">0</span>)</span>
+      </h2>
+      <div class="card-list" id="responses-list">
+        <div class="empty-state">
+          <span class="icon">💊</span>
+          <p>No responses yet</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/doctor-script.js"></script>
+</body>
+</html>

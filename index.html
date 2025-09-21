@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/index.css">
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <title>🩺 VIT Medical Services</title>
+</head>
+<body>
+
+  <header class="header">
+    <div class="left-header">
+      <h1 class="h1">VIT Medical Services</h1>
+      <p class="slogan">Your Health, Our Priority</p>
+    </div>
+    <div class="right-header">
+      <a href="index.html" class="student">Student Portal</a>
+      <a href="doctor.html" class="doctor">Doctor Portal</a>
+    </div>
+  </header>
+
+  <main class="box">
+    <div class="top">
+      <h2>Describe Your Medical Issue</h2>
+      <p class="para">Our qualified doctors will review your symptoms and prescribe appropriate medication</p>
+    </div>
+    <form class="form" id="studentForm">
+      <div class="top1">
+        <div class="name-div">
+          <label for="name-input" class="name-label">Full Name</label>
+          <input type="text" id="name-input" class="name-input" name="nameInput" placeholder="Enter Your Full Name" required>
+        </div>
+        <div class="ID-div">
+          <label for="ID-input" class="ID-label">Student ID</label>
+          <input type="text" class="ID-input" id="ID-input" name="IdInput" placeholder="Enter Your Student ID" required>
+        </div>
+      </div>
+      <div class="buttom1">
+        <div class="symptoms-div">
+          <label for="symptoms-input" class="symptoms-label">Describe your symptoms</label>
+          <textarea id="symptoms-input" class="symptoms-input" name="symptomsInput" rows="4" placeholder="Describe your symptoms in detail (eg, cold, cough, fever etc)" required></textarea>
+        </div>
+        <input type="submit" class="submit js-submit">
+      </div>
+    </form>
+    <div id="formMessage" style="margin-top: 1rem; text-align: center; font-weight: bold;"></div>
+  </main>
+<br>
+  <h2 class="h2">Your Consultations:</h2>
+  <div class="box2" id="consultationsGrid">
+    </div>
+
+  <div class="modal-overlay" id="payment-modal-overlay">
+    <div class="modal-content">
+      <h2>Payment & Delivery Details</h2>
+      <form id="payment-form">
+        <input type="hidden" id="payment-consultation-id">
+        
+        <label for="hostel-type">Select Hostel</label>
+        <select id="hostel-type" required>
+          <option value="" disabled selected>-- Select Hostel Type --</option>
+          <option value="Male">Male Hostel</option>
+          <option value="Female">Female Hostel</option>
+        </select>
+        
+        <label for="hostel-block">Hostel Block (e.g., A, B, MH-G)</label>
+        <input type="text" id="hostel-block" placeholder="Enter Block Name/Number" required>
+
+        <label for="room-number">Room Number</label>
+        <input type="text" id="room-number" placeholder="Enter Room Number" required>
+        
+        <div class="modal-buttons">
+          <button type="submit" class="submit-btn">Pay and Order</button>
+          <button type="button" class="cancel-btn" id="payment-cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="ai-chat-widget" class="chat-widget hidden">
+    <div class="chat-header">
+      <h3>AI Assistant</h3>
+      <button id="chat-close-btn">&times;</button>
+    </div>
+    <div id="chat-messages" class="chat-messages"></div>
+    <form id="chat-form" class="chat-input-area">
+      <input type="text" id="chat-input" placeholder="Ask a follow-up..." required autocomplete="off">
+      <button type="submit" id="chat-send-btn">Send</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
